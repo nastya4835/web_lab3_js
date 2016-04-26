@@ -136,3 +136,11 @@ body {
 .dieta_cell_img span {
 	font-size: larger;
 }
+.validEmail
+    {
+    margin-top: 4px;
+    margin-left: 9px;
+    position: absolute;
+    width: 16px;
+    height: 16px;
+    }

@@ -25,6 +25,10 @@ $(function(){
 
             $isBackgroundBlue = !$isBackgroundBlue;
         });
+
+
+
+
         // $button.click(function() {
  
         //     if($userName.val().length < 7) {

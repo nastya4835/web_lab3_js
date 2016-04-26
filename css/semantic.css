@@ -16115,7 +16115,9 @@ ol.ui.horizontal.list li:before,
 
 .ui.form {
   position: relative;
-  max-width: 100%;
+  left: 20px;
+  top: 20px;
+  max-width: 20%;
 }
 
 /*--------------------
