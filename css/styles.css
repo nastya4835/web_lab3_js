@@ -15,9 +15,9 @@ body {
 }
 
 .center_div {
-	width: 820px; 
+	min-width: 820px; 
 	background: white; 
-	margin: auto; 
+	margin: 0px 100px 0px 100px; 
 	padding: 10px;
 }
 
