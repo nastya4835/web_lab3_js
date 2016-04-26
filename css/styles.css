@@ -9,9 +9,12 @@
     font-weight: 700;
 }
 
+p, h1, h2, h3, h4, h5, h6, strong, b {
+	font-family: myFont;
+}
+
 body {
 	background-color: #4CAF50;
-	font-family: myFont;
 }
 
 .center_div {
