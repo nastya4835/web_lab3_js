@@ -26,7 +26,6 @@ $(function(){
             $isBackgroundBlue = !$isBackgroundBlue;
         });
 
-
 $(document).ready(function() {
     $('#email').blur(function() {
         if($(this).val() != '') {
@@ -44,6 +43,125 @@ $(document).ready(function() {
         }
     });
 });
+
+$(function CountLogin(item) {
+// определяем переменную для слоя показа кол-ва введенных символов
+var item_view = 'login_view';
+// определяем переменную для показа сообщения об ошибке
+var item_correct = 'login_correct';
+// узнаем кол-во введенных в поле символов и записываем значение в слой показа
+document.getElementById(item_view).innerHTML = document.getElementById(item).value.length++; 
+ // проверяем данные
+// если введено  больше 5 символов
+ if (document.getElementById(item).value.length >= 5) {
+  // записываем в слой сообщений, что все верно
+  document.getElementById(item_correct).innerHTML = 'верно';
+  // и меняем класс слоя 
+  document.getElementById(item_correct).className = 'correct';
+  document.getElementById('check_login').value = 1;
+ } else {
+   // если введено меньше 5 символов, то так и записываем
+  document.getElementById(item_correct).innerHTML = 'не менее 5 символов';
+   // если введено меньше 5 символов, то так и записываем
+  document.getElementById(item_correct).className = '';
+  document.getElementById('check_login').value = 0;
+ }
+ checkAll(); 
+});
+
+
+
+
+
+
+
+/*function CountPass(item) {
+var item_view = 'pass_view';
+var item_correct = 'pass_correct';
+var item_login_value = document.getElementById('login_id').value;
+var item_login_length = document.getElementById('login_id').value.length;
+document.getElementById(item_view).innerHTML = document.getElementById(item).value.length++; 
+ if (document.getElementById(item).value == item_login_value && item_login_length >= 5) {
+  document.getElementById(item_correct).innerHTML = 'пароль совпадает с логином';
+  document.getElementById(item_correct).className = 'acorrect';
+  document.getElementById('check_pass').value = 0;
+ } else {
+  if (document.getElementById(item).value.length >= 4) {
+   document.getElementById(item_correct).innerHTML = 'верно';
+   document.getElementById(item_correct).className = 'correct';
+   document.getElementById('check_pass').value = 1;
+  } else if (document.getElementById(item).value.length < 4) {
+   document.getElementById(item_correct).innerHTML = 'пароль должен содержать от 4 до 20 символов';
+   document.getElementById(item_correct).className = '';
+   document.getElementById('check_pass').value = 0;
+  }
+ }
+ checkAll();
+}
+
+function CorrectPass(item) {
+var item_pass_value = document.getElementById('pass_id').value;
+var item_pass_length = document.getElementById('pass_id').value.length
+var item_correct = 'repass_correct';
+ if (item_pass_length >= 4) {
+  if (document.getElementById(item).value == item_pass_value) {
+    document.getElementById(item_correct).innerHTML = 'совпадают';
+    document.getElementById(item_correct).className = 'correct';
+    document.getElementById('check_repass').value = 1;
+  } else if (document.getElementById(item).value.length >= 4) {
+    document.getElementById(item_correct).innerHTML = 'пароли не совпадают';
+    document.getElementById(item_correct).className = 'acorrect';
+    document.getElementById('check_repass').value = 0;
+  }
+ }
+ checkAll();
+}
+
+
+function isEmail(item) {
+var at="@"
+var dot="."
+var lat=item.indexOf(at)
+var litem=item.length
+var ldot=item.indexOf(dot)
+if (item.indexOf(at)==-1) return false; 
+if (item.indexOf(at)==-1 || item.indexOf(at)==0 || item.indexOf(at)==litem) return false;
+if (item.indexOf(dot)==-1 || item.indexOf(dot)==0 || item.indexOf(dot) >= litem - 2) return false;
+if (item.indexOf(at,(lat+1))!=-1) return false;
+if (item.substring(lat-1,lat)==dot || item.substring(lat+1,lat+2)==dot) return false;
+if (item.indexOf(dot,(lat+2))==-1) return false;
+if (item.indexOf(" ")!=-1) return false;
+return true 
+}
+
+function CorrectEmail(item) {
+ if(isEmail(item.value) == true) {
+  document.getElementById('email_correct').innerHTML = 'правильно';
+  document.getElementById('email_correct').className = 'correct';
+  document.getElementById('check_email').value = 1;
+ } else {
+   document.getElementById('email_correct').innerHTML = '';
+   document.getElementById('check_email').value = 0;
+ }
+ checkAll();
+}
+
+
+function checkAll() {
+var x;
+var check_login = document.getElementById('check_login').value;
+var check_pass = document.getElementById('check_pass').value;
+var check_repass = document.getElementById('check_repass').value;
+var check_email = document.getElementById('check_email').value;
+  x = check_login + check_pass + check_repass + check_email;
+  document.getElementById('check_all').value = x;
+ if (document.getElementById('check_all').value == 1111) {
+  document.getElementById('submit_id').disabled = false;
+ } else {
+  document.getElementById('submit_id').disabled = true;
+ }
+}*/
+
 
 
 
