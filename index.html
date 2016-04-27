@@ -33,12 +33,21 @@
 		<div class="info" id="login_correct">не менее 5 символов</div>
 	</div>
     <label>E-mail</label>
+    <div>
     	<p>
     	<input type="text" id="email" placeholder="qwe@mail.com">
     	<span id="valid"></span></p>
-    	<label>Пароль</label>
-   		<input placeholder="*****">
-   		<input style="margin: 10px"  id="b1" value="ОК" onclick="alert('Спасибо!');" type="button"/>
+    </div>
+
+    <label>Пароль</label>
+    <div>
+	   	<input  type="password" name="pass" id="pass_id" onkeypress="CountPass('pass_id')" onfocus="CountPass('pass_id')" onkeyup="CountPass('pass_id')" value="" placeholder="*****" />
+	   	<div class="mini">введено: <span id="pass_view">0</span></div>
+	</div>   	
+
+
+
+<input style="margin: 10px"  id="b1" value="ОК" onclick="alert('Спасибо!');" type="button"/>
   </div>
 </div>
 </form>

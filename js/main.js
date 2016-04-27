@@ -9,22 +9,23 @@ var $button;
 var $isBackgroundBlue = false;
  
 $(function(){
-        $button = $("#image123");
-        $button.click(function() {  
-            if ($isBackgroundBlue) {
-                $button.css({
-                    background: "#FFF",
-                    width: "900px"
-                });
-            } else {
-                $button.css({
-                    background: inputGoodColor,
-                    width: "820px"
-                });
-            }
+    $button = $("#image123");
+    $button.click(function() {  
+        if ($isBackgroundBlue) {
+            $button.css({
+                background: "#FFF",
+                width: "900px"
+            });
+        } else {
+            $button.css({
+                background: inputGoodColor,
+                width: "820px"
+            });
+        }
 
-            $isBackgroundBlue = !$isBackgroundBlue;
-        });
+        $isBackgroundBlue = !$isBackgroundBlue;
+    });
+});
 
 $(document).ready(function() {
     $('#email').blur(function() {
@@ -44,7 +45,8 @@ $(document).ready(function() {
     });
 });
 
-$(function CountLogin(item) {
+
+function CountLogin(item) {
 // определяем переменную для слоя показа кол-ва введенных символов
 var item_view = 'login_view';
 // определяем переменную для показа сообщения об ошибке
@@ -67,30 +69,37 @@ document.getElementById(item_view).innerHTML = document.getElementById(item).val
   document.getElementById('check_login').value = 0;
  }
  checkAll(); 
-});
+}
 
-
-
-
-
-
-
-/*function CountPass(item) {
+function CountPass(item) {
+// определяем переменную для слоя показа кол-ва введенных символов
 var item_view = 'pass_view';
+// определяем переменную для показа сообщения об ошибке
 var item_correct = 'pass_correct';
+// записываем значение поля логина
 var item_login_value = document.getElementById('login_id').value;
+// записываем кол-во символов в поле логина
 var item_login_length = document.getElementById('login_id').value.length;
+// узнаем кол-во введенных в поле символов и записываем значение в слой показа
 document.getElementById(item_view).innerHTML = document.getElementById(item).value.length++; 
+// проверяем данные
+// если пароль совпадает с логином и логин больше 5 символов 
  if (document.getElementById(item).value == item_login_value && item_login_length >= 5) {
+  // записываем сообщение об ошибке
   document.getElementById(item_correct).innerHTML = 'пароль совпадает с логином';
+  // и меняем класс слоя для показа ошибки
   document.getElementById(item_correct).className = 'acorrect';
   document.getElementById('check_pass').value = 0;
  } else {
+    // если пароль не совпадает с логином 
+    // если пароль больше 4 символов
   if (document.getElementById(item).value.length >= 4) {
+    // то все верно, сообщаем об этом 
    document.getElementById(item_correct).innerHTML = 'верно';
    document.getElementById(item_correct).className = 'correct';
    document.getElementById('check_pass').value = 1;
   } else if (document.getElementById(item).value.length < 4) {
+   // если пароль меньше 4 символов
    document.getElementById(item_correct).innerHTML = 'пароль должен содержать от 4 до 20 символов';
    document.getElementById(item_correct).className = '';
    document.getElementById('check_pass').value = 0;
@@ -99,6 +108,8 @@ document.getElementById(item_view).innerHTML = document.getElementById(item).val
  checkAll();
 }
 
+
+/*
 function CorrectPass(item) {
 var item_pass_value = document.getElementById('pass_id').value;
 var item_pass_length = document.getElementById('pass_id').value.length
@@ -160,9 +171,9 @@ var check_email = document.getElementById('check_email').value;
  } else {
   document.getElementById('submit_id').disabled = true;
  }
-}*/
+}
 
-
+*/
 
 
 
@@ -193,7 +204,6 @@ var check_email = document.getElementById('check_email').value;
         //     var password = CryptoJS.MD5('sdfsdf');  
         //     alert("Зарегистрировались\nLogin: " + login + "\nPassword: " + password);
         // });
-});
  
 // userName
 // $(function(){
