@@ -19,38 +19,37 @@
 			<a href="index.html" title="Здоровый образ жизни и здоровое питание" align="right"><img src ="images/logo1.jpg" width="100%" /></a>
 		</div>
 
-<form class="ui form" id='form' method='post'>
-<div>
-  <div class="field">
-    <select>
-      <option value="">Регистрация</option>
-      <option value="1">Авторизация</option>
-    </select>
-	<label>Логин</label>
-	<div>
-		<input type="text" name="login" id="login_id" onkeypress="CountLogin('login_id')" onfocus="CountLogin('login_id')" onkeyup="CountLogin('login_id')" value="" />
-		<div class="mini">введено: <span id="login_view">0</span></div>
-		<div class="info" id="login_correct">не менее 5 символов</div>
-	</div>
-    <label>E-mail</label>
-    <div>
-    	<p>
-    	<input type="text" id="email" placeholder="qwe@mail.com">
-    	<span id="valid"></span></p>
-    </div>
+		<form class="ui form" id='form' method='post'>
+				<div class="field">
+				<select>
+					<option value="">Регистрация</option>
+					<option value="1">Авторизация</option>
+					</select>
+			
+				<label>Логин</label>
+				<div>
+					<input type="text" name="login" id="login_id" onkeypress="CountLogin('login_id')" onfocus="CountLogin('login_id')" onkeyup="CountLogin('login_id')" value="" />
+					<div class="mini">введено: <span id="login_view">0</span></div>
+					<div class="info" id="login_correct">не менее 5 символов</div>
+				</div>
 
-    <label>Пароль</label>
-    <div>
-	   	<input  type="password" name="pass" id="pass_id" onkeypress="CountPass('pass_id')" onfocus="CountPass('pass_id')" onkeyup="CountPass('pass_id')" value="" placeholder="*****" />
-	   	<div class="mini">введено: <span id="pass_view">0</span></div>
-	</div>   	
+				<label>E-mail</label>
+				<div>
+					<p>
+					<input type="text" id="email" placeholder="qwe@mail.com">
+					<span id="valid"></span></p>
+				</div>
 
+				<label>Пароль</label>
+				<div>
+						<input  type="password" name="pass" id="pass_id" onkeypress="CountPass('pass_id')" onfocus="CountPass('pass_id')" onkeyup="CountPass('pass_id')" value="" placeholder="*****" />
+					<div class="mini">введено: <span id="pass_view">0</span></div>
+					<div class="info" id="pass_correct">пароль должен содержать от 4 до 20 символов</div>
+				</div>   	
 
-
-<input style="margin: 10px"  id="b1" value="ОК" onclick="alert('Спасибо!');" type="button"/>
-  </div>
-</div>
-</form>
+				<input style="margin: 10px"  id="b1" value="ОК" onclick="alert('Спасибо!');" type="button"/>
+			</div>
+		</form>
 
 
 		<div class="menu_buttons">
