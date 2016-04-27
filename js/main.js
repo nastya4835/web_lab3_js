@@ -110,23 +110,31 @@ document.getElementById(item_view).innerHTML = document.getElementById(item).val
 
 
 
-/*function CorrectPass(item) {
+function CorrectPass(item) {
+// записываем в переменную значение введенного пароля
 var item_pass_value = document.getElementById('pass_id').value;
+// записываем в переменную кол-во символов введенного пароля
 var item_pass_length = document.getElementById('pass_id').value.length
+// определяем переменную для показа сообщения об ошибке
 var item_correct = 'repass_correct';
+// проверяем правильно ли введен парол
 	if (item_pass_length >= 4) {
+		// проверяем совпадают ли значения введеных паролей
 		if (document.getElementById(item).value == item_pass_value) {
+				// если совпадают, сообщаем об этом
 				document.getElementById(item_correct).innerHTML = 'совпадают';
 				document.getElementById(item_correct).className = 'correct';
-				document.getElementById('check_repass').value = 1;
-		} else if (document.getElementById(item).value.length >= 4) {
+				//document.getElementById('check_repass').value = 1;		
+		} 
+		// если введенный пароль меньше 4 символов и не совпадает 
+		else if (document.getElementById(item).value.length >= 4) {
 				document.getElementById(item_correct).innerHTML = 'пароли не совпадают';
 				document.getElementById(item_correct).className = 'acorrect';
-				document.getElementById('check_repass').value = 0;
+				//document.getElementById('check_repass').value = 0;
 		}
 	}
-	checkAll();
-}*/
+	//checkAll();
+}
 
 
 /*function isEmail(item) {
