@@ -7,6 +7,27 @@ var $password;
 var $userName;
 var $button;
 var $isBackgroundBlue = false;
+
+  $(document).ready(function(){
+    $.fn.wait = function(time, type) {
+        time = time || 10;
+        type = type || "fx";
+        return this.queue(type, function() {
+            var self = this;
+            setTimeout(function() {
+                $(self).dequeue();
+            }, time);
+        });
+    };
+    function runIt() {
+      $("blink").wait()
+              .animate({"opacity": 0.1},2000)
+              .wait()
+              .animate({"opacity": 1},1500,runIt);
+    }
+    runIt();
+  });
+
 	
 $(function(){
 	$button = $("#image123");
@@ -110,7 +131,6 @@ document.getElementById(item_view).innerHTML = document.getElementById(item).val
 	}
 	checkAll();
 }
-
 
 
 function CorrectPass(item) {
