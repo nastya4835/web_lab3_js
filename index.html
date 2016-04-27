@@ -29,7 +29,7 @@
 				<label>E-mail</label>
 				<div>
 					<p>
-					<input type="text" id="email" placeholder="qwerty@mail.com">
+					<input type="text" id="email_id" placeholder="qwerty@mail.com">
 					<span id="valid"></span></p>
 				</div>
 
@@ -54,7 +54,16 @@
 					<div class="info" id="repass_correct"></div>
 				</div>
 
-
+				<label><input class="registration" type="submit" name="submit" id="submit_id" 
+				value="зарегистрироваться" disabled /></label>
+				<div id="check_correct"></div>
+					<div>
+						<input type="hidden" name="check_login" id="check_login" value="0" />
+						<input type="hidden" name="check_pass" id="check_pass" value="0" />
+						<input type="hidden" name="check_repass" id="check_repass" value="0" />
+						<input type="hidden" name="check_email" id="check_email" value="0" />
+						<input type="hidden" name="check_all" id="check_all" value="0" />
+				</div>
 
 				<input style="margin: 10px"  id="b1" value="ОК" onclick="alert('Спасибо!');" type="button"/>
 			</div>
