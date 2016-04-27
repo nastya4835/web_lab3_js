@@ -43,6 +43,7 @@ $(document).ready(function() {
 		} else {
 			$(this).css({'border' : '1px solid #ff0000'});
 			$('#valid').text('Поле email не должно быть пустым');
+			document.getElementById('check_email').value = 0;
 		}
 	});
 });
@@ -113,13 +114,15 @@ document.getElementById(item_view).innerHTML = document.getElementById(item).val
 
 
 function CorrectPass(item) {
+var item_view = 'true_pass_view';
 // записываем в переменную значение введенного пароля
 var item_pass_value = document.getElementById('pass_id').value;
 // записываем в переменную кол-во символов введенного пароля
 var item_pass_length = document.getElementById('pass_id').value.length
 // определяем переменную для показа сообщения об ошибке
 var item_correct = 'repass_correct';
-// проверяем правильно ли введен парол
+document.getElementById(item_view).innerHTML = document.getElementById(item).value.length++; 
+// проверяем правильно ли введен пароль
 	if (item_pass_length >= 4) {
 		// проверяем совпадают ли значения введеных паролей
 		if (document.getElementById(item).value == item_pass_value) {
@@ -158,33 +161,7 @@ var check_email = document.getElementById('check_email').value;
 
 
 
-/*function isEmail(item) {
-var at="@"
-var dot="."
-var lat=item.indexOf(at)
-var litem=item.length
-var ldot=item.indexOf(dot)
-if (item.indexOf(at)==-1) return false; 
-if (item.indexOf(at)==-1 || item.indexOf(at)==0 || item.indexOf(at)==litem) return false;
-if (item.indexOf(dot)==-1 || item.indexOf(dot)==0 || item.indexOf(dot) >= litem - 2) return false;
-if (item.indexOf(at,(lat+1))!=-1) return false;
-if (item.substring(lat-1,lat)==dot || item.substring(lat+1,lat+2)==dot) return false;
-if (item.indexOf(dot,(lat+2))==-1) return false;
-if (item.indexOf(" ")!=-1) return false;
-return true 
-}
 
-function CorrectEmail(item) {
-	if(isEmail(item.value) == true) {
-		document.getElementById('email_correct').innerHTML = 'правильно';
-		document.getElementById('email_correct').className = 'correct';
-		document.getElementById('check_email').value = 1;
-	} else {
-			document.getElementById('email_correct').innerHTML = '';
-			document.getElementById('check_email').value = 0;
-	}
-	checkAll();
-}*/
 
 
 
