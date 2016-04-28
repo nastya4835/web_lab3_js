@@ -120,7 +120,7 @@ document.getElementById(item_view).innerHTML = document.getElementById(item).val
 		// если введено меньше 5 символов, то так и записываем
 		document.getElementById(item_correct).innerHTML = 'не менее 5 символов';
 		// если введено меньше 5 символов, то так и записываем
-		document.getElementById(item_correct).className = '';
+		document.getElementById(item_correct).className = 'info';
 		document.getElementById('check_login').value = 0;
 		}
 	checkAll(); 
@@ -156,7 +156,7 @@ document.getElementById(item_view).innerHTML = document.getElementById(item).val
 		} else if (document.getElementById(item).value.length < 4) {
 			// если пароль меньше 4 символов
 			document.getElementById(item_correct).innerHTML = 'пароль должен содержать от 4 до 20 символов';
-			document.getElementById(item_correct).className = '';
+			document.getElementById(item_correct).className = 'info';
 			document.getElementById('check_pass').value = 0;
 		}
 	}
