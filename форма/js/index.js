@@ -1,8 +1,18 @@
 $("#tabs").on("click", "a", function(){
-  var me = $(this);
+	var me = $(this);
 
-  $(".active").removeClass("active");
-  me.addClass("active");
-  $("#" + me.attr("id").replace("tab", "container")).addClass("active");
-  return false;
+	$(".active").removeClass("active");
+	me.addClass("active");
+	var currentDivID = me.attr("id").replace("tab", "container");
+	$("#" + currentDivID).addClass("active");
+	if (currentDivID == "containerLogin") {
+		$("#" + currentDivID).css({
+			height: "230px"
+		});
+	} else if (currentDivID == "containerRegister") {
+		$("#" + currentDivID).css({
+			height: "360px"
+		});
+	}
+	return false;
 });

@@ -3,10 +3,11 @@
 <head>
 	<meta charset="UTF-8">
 	<title>22 лучших формы входа и регистрации | Vladmaxi.net</title>
-	<link rel='stylesheet prefetch' href="http://netdna.bootstrapcdn.com/font-awesome/3.2.0/css/font-awesome.min.css" />
+	<link rel='stylesheet prefetch' href="css/font-awesome.min.css" />
 	<link rel="stylesheet" href="css/style.css" media="screen" type="text/css" />
-	<link rel="icon" href="http://vladmaxi.net/favicon.ico" type="image/x-icon">
-	<link rel="shortcut icon" href="http://vladmaxi.net/favicon.ico" type="image/x-icon">
+  <link rel="stylesheet" href="css/styles.css" media="screen" type="text/css" />
+<!-- 	<link rel="icon" href="http://vladmaxi.net/favicon.ico" type="image/x-icon">
+	<link rel="shortcut icon" href="http://vladmaxi.net/favicon.ico" type="image/x-icon"> -->
 </head>
 
 <body>
@@ -62,11 +63,12 @@
         <div class="info" id="pass_correct">пароль должен содержать от 4 до 20 символов</div>
     </div>  
 
-    <div class="inputWrapper">
+    <div class="inputWrapper" style="margin-top: 45px;">
         <input type="password" name="repass" id="repass_id" onkeypress="CorrectPass('repass_id')" onfocus="CorrectPass('repass_id')" onkeyup="CorrectPass('repass_id')" value="" placeholder="Повторите пароль" />
         <div class="mini">введено: <span id="true_pass_view">0</span></div>
         <div class="info" id="repass_correct"></div>
       </div>
+
 
         <button class="greenBox"><span class="iconRegister"></span> Зарегистрироваться</button>
         <div class="clear"></div>
@@ -92,7 +94,8 @@
   </div>
 </div>
 
-  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
+  <script src="js/jquery-2.2.3.js"></script>
   <script src="js/index.js"></script>
+  <script type="text/javascript" src="js/main.js"></script>
 </body>
 </html>

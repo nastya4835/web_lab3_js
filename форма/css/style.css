@@ -116,14 +116,13 @@ body {
   position: relative;
   z-index: 3;
   overflow: hidden;
-  height: 230px;
   -webkit-box-shadow: 0 0 5px black;
   -moz-box-shadow: 0 0 5px black;
   box-shadow: 0 0 5px black;
 }
 
 .tabContainer {
-  height: 230px;
+  height: 100%;
   display: none;
   border: solid 1px white;
   padding: 20px;
@@ -196,7 +195,6 @@ input[type=text]:focus, input[type=password]:focus {
 }
 
 button {
-  float: right;
   color: white;
   height: 32px;
 }

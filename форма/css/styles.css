@@ -138,6 +138,7 @@ body {
 }
 
 .mini {
+	float: right;
  color: #666;
  font-size: 10px;
 }
