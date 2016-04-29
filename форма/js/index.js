@@ -7,7 +7,7 @@ $("#tabs").on("click", "a", function(){
 	$("#" + currentDivID).addClass("active");
 	if (currentDivID == "containerLogin") {
 		$("#" + currentDivID).css({
-			height: "230px"
+			height: "263px"
 		});
 	} else if (currentDivID == "containerRegister") {
 		$("#" + currentDivID).css({
