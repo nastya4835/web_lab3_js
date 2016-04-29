@@ -8,26 +8,70 @@ var $userName;
 var $button;
 var $isBackgroundBlue = false;
 
-  $(document).ready(function(){
-    $.fn.wait = function(time, type) {
-        time = time || 10;
-        type = type || "fx";
-        return this.queue(type, function() {
-            var self = this;
-            setTimeout(function() {
-                $(self).dequeue();
-            }, time);
-        });
-    };
-    function runIt() {
-      $("blink").wait()
-              .animate({"opacity": 0.1},2000)
-              .wait()
-              .animate({"opacity": 1},1500,runIt);
-    }
-    runIt();
-  });
+//При нажатии меняется ширина страницы
+$(function(){
+	$button = $("#image123");
+	$button.click(function() {  
+		if ($isBackgroundBlue) {
+			$button.css({
+				background: "#FFF",
+				width: "900px"
+			});
+		} else {
+			$button.css({
+				background: inputGoodColor,
+				width: "820px"
+			});
+		}
 
+		$isBackgroundBlue = !$isBackgroundBlue;
+	});
+});
+
+//Мигающий заголовок
+$(document).ready(function(){
+	$.fn.wait = function(time, type) {
+		time = time || 10;
+		type = type || "fx";
+		return this.queue(type, function() {
+			var self = this;
+			setTimeout(function() {
+				$(self).dequeue();
+			}, time);
+		});
+	};
+	function runIt() {
+		$("blink").wait()
+			.animate({"opacity": 0.1},2000)
+			.wait()
+			.animate({"opacity": 1},1500,runIt);
+	}
+	runIt();
+});
+
+//Текущая дата и время
+function clock() {
+var d = new Date();
+var month_num = d.getMonth()
+var day = d.getDate();
+var hours = d.getHours();
+var minutes = d.getMinutes();
+var seconds = d.getSeconds();
+	month = new Array("января", "февраля", "марта", "апреля", "мая", "июня", "июля", "августа", "сентября", "октября", "ноября", "декабря");
+	if (day <= 9) day = "0" + day;
+	if (hours <= 9) hours = "0" + hours;
+	if (minutes <= 9) minutes = "0" + minutes;
+	if (seconds <= 9) seconds = "0" + seconds;
+		
+	date_time = "Сегодня - " + day + " " + month[month_num] + " " + d.getFullYear() + " г.&nbsp;&nbsp;&nbsp;Текущее время - "+ hours + ":" + minutes + ":" + seconds;
+		if (document.layers) {
+			document.layers.doc_time.document.write(date_time);
+			document.layers.doc_time.document.close();
+		} else document.getElementById("doc_time").innerHTML = date_time;
+		setTimeout("clock()", 1000);
+}
+
+//Меняющиеся картинки
 var img_count = 5;     // число картинок
 var time_show = 1500;  // время показа, мс.
 var time_change = 15;  // интервал между шагами изменения opacity, мс.
@@ -85,35 +129,7 @@ if (start==2)
 }
 
 
-
-
-
-
-
-
-
-
-
-	
-$(function(){
-	$button = $("#image123");
-	$button.click(function() {  
-		if ($isBackgroundBlue) {
-			$button.css({
-				background: "#FFF",
-				width: "900px"
-			});
-		} else {
-			$button.css({
-				background: inputGoodColor,
-				width: "820px"
-			});
-		}
-
-		$isBackgroundBlue = !$isBackgroundBlue;
-	});
-});
-
+//Проверка на правильность Email
 $(document).ready(function() {
 	$('#email_id').blur(function() {
 		if($(this).val() != '') {
@@ -135,7 +151,7 @@ $(document).ready(function() {
 	});
 });
 
-
+//Проверка на правильность Логина
 function CountLogin(item) {
 // определяем переменную для слоя показа кол-ва введенных символов
 var item_view = 'login_view';
@@ -161,6 +177,7 @@ document.getElementById(item_view).innerHTML = document.getElementById(item).val
 	checkAll(); 
 }
 
+//Проверка на правильность Пароля
 function CountPass(item) {
 // определяем переменную для слоя показа кол-ва введенных символов
 var item_view = 'pass_view';
@@ -198,7 +215,7 @@ document.getElementById(item_view).innerHTML = document.getElementById(item).val
 	checkAll();
 }
 
-
+//Проверка на правильность Повторите пароль
 function CorrectPass(item) {
 var item_view = 'true_pass_view';
 // записываем в переменную значение введенного пароля
@@ -227,6 +244,7 @@ document.getElementById(item_view).innerHTML = document.getElementById(item).val
 	checkAll();
 }
 
+//Проверка на заполненность всех полей и Зарегистриваться
 function checkAll() {
 var x;
 var check_login = document.getElementById('check_login').value;
