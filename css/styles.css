@@ -162,3 +162,29 @@ body {
  color: red;
  font-size: 10px;
 }
+
+
+
+
+
+.div_style
+{
+position: relative; 
+text-align: center; 
+width: 99%; 
+border: 1px solid #555;"
+}
+.img_style
+{
+width: 33.3%;
+margin-top: 8px;
+border: 1px solid #0000ff;
+}
+.img_style.hidden
+{
+position: absolute;
+left: 33.3%;
+opacity: 0;
+filter: alpha(opacity=0);
+z-index: -1000;
+}
