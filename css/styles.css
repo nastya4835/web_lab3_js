@@ -42,7 +42,6 @@ body {
 	width: 400px; 
 	height: 251px; 
 	margin: 15px 25px; 
-	float: right;
 }
 
 .vitamini_img {
@@ -163,28 +162,24 @@ body {
  font-size: 10px;
 }
 
-
-
-
-
 .div_style
 {
-position: relative; 
-text-align: center; 
-width: 99%; 
-border: 1px solid #555;"
+	position: relative; 
+	text-align: center; 
+	width: auto; 
+	height: 267px;
 }
 .img_style
 {
-width: 33.3%;
-margin-top: 8px;
-border: 1px solid #0000ff;
+	left: 31.3%;
+	margin-top: 8px;
 }
+
 .img_style.hidden
 {
-position: absolute;
-left: 33.3%;
-opacity: 0;
-filter: alpha(opacity=0);
-z-index: -1000;
+	position: absolute;
+	left: 31.3%;
+	opacity: 0;
+	filter: alpha(opacity=0);
+	z-index: -1000;
 }
