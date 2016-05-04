@@ -71,6 +71,38 @@ var seconds = d.getSeconds();
 		setTimeout("clock()", 1000);
 }
 
+//Анимация текста
+$(document).ready(function(){
+	$.fn.animate_Text = function() {
+		var string = this.text();
+		return this.each(function(){
+			var $this = $(this);
+			$this.html(string.replace(/./g, '<span class="new">$&</span>'));
+			$this.find('span.new').each(function(i, el){
+				setTimeout(function(){ $(el).addClass('div_opacity'); }, 20 * i);
+			});
+		});
+	};
+	$('#animate').show();
+	$('#animate').animate_Text();
+});
+
+//Поворот изображения
+$(document).ready(function(){
+ jQuery(".rotate1").rotate(45);
+
+ jQuery("#rotate2").rotate({ bind:{
+    mouseover:function(){ $(this).rotate({animateTo:90}) },
+    mouseout:function(){ $(this).rotate({animateTo:0}) }
+ }});
+
+ var angle=0;
+ setInterval(function(){
+    angle+=3;
+    jQuery("#rotate3").rotate(angle);
+ },90);
+});
+
 //Меняющиеся картинки
 var img_count = 5;     // число картинок
 var time_show = 1500;  // время показа, мс.
