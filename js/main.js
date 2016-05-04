@@ -28,6 +28,11 @@ $(function(){
 	});
 });
 
+//Индикатор загрузки
+$(document).ready(function(){
+	$("div.indicator").delay(2000).fadeOut(1000);
+});
+
 //Мигающий заголовок
 $(document).ready(function(){
 	$.fn.wait = function(time, type) {
