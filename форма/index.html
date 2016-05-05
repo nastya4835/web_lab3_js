@@ -27,14 +27,14 @@
       <h2 class="loginTitle">Авторизация</h2>
       <div class="loginContent">
         <div class="inputWrapper">
-          <input type="text" name="login" id="login_id" onkeypress="CountLogin('login_id')" onfocus="CountLogin('login_id')" onkeyup="CountLogin('login_id')" value="" placeholder="Логин" />
-          <div class="mini">введено: <span id="login_view">0</span></div>
-          <div class="info" id="login_correct">не менее 5 символов</div>
+          <input type="text" name="auth_login" id="auth_login_id" onkeyup="CountLogin('auth_login_id','auth_login_view','auth_login_correct','auth_pass_id','auth_pass_correct')" value="" placeholder="Логин" />
+          <div class="mini">введено: <span id="auth_login_view">0</span></div>
+          <div class="info" id="auth_login_correct">не менее 5 символов</div>
         </div>
         <div class="inputWrapper">
-          <input  type="password" name="pass" id="pass_id" maxLength="20" onkeypress="CountPass('pass_id')" onfocus="CountPass('pass_id')" onkeyup="CountPass('pass_id')" value="" placeholder="Пароль" />
-        <div class="mini">введено: <span id="pass_view">0</span></div>
-        <div class="info" id="pass_correct">пароль должен содержать от 4 до 20 символов</div>
+          <input  type="password" name="auth_pass" id="auth_pass_id" maxLength="20" onkeyup="CountPass('auth_pass_id','auth_pass_view','auth_pass_correct','auth_login_id', 'auth_login_correct')" value="" placeholder="Пароль" />
+        <div class="mini">введено: <span id="auth_pass_view">0</span></div>
+        <div class="info" id="auth_pass_correct">пароль должен содержать от 4 до 20 символов</div>
         </div>
       </div>
       <button style="margin-top: 30px;" class="blueBox"><span class="iconLogin"></span> ВОЙТИ</button>
@@ -56,21 +56,21 @@
     </div>
 
     <div class="inputWrapper">
-      <input type="text" name="login" id="login_id" onkeypress="CountLogin('login_id')" onfocus="CountLogin('login_id')" onkeyup="CountLogin('login_id')" value="" placeholder="Логин" />
-      <div class="mini">введено: <span id="login_view">0</span></div>
-      <div class="info" id="login_correct">не менее 5 символов</div>
+      <input type="text" name="reg_login" id="reg_login_id" onkeyup="CountLogin('reg_login_id','reg_login_view','reg_login_correct','reg_pass_id','reg_pass_correct')" value="" placeholder="Логин" />
+      <div class="mini">введено: <span id="reg_login_view">0</span></div>
+      <div class="info" id="reg_login_correct">не менее 5 символов</div>
     </div>
 
     <div class="inputWrapper">
-        <input  type="password" name="pass" id="pass_id" maxLength="20" onkeypress="CountPass('pass_id')" onfocus="CountPass('pass_id')" onkeyup="CountPass('pass_id')" value="" placeholder="Пароль" />
-        <div class="mini">введено: <span id="pass_view">0</span></div>
-        <div class="info" id="pass_correct">пароль должен содержать от 4 до 20 символов</div>
+        <input  type="password" name="reg_pass" id="reg_pass_id" maxLength="20" onkeyup="CountPass('reg_pass_id','reg_pass_view','reg_pass_correct','reg_login_id','reg_login_correct','reg_repass_id','reg_repass_correct')" value="" placeholder="Пароль" />
+        <div class="mini">введено: <span id="reg_pass_view">0</span></div>
+        <div class="info" id="reg_pass_correct">пароль должен содержать от 4 до 20 символов</div>
     </div>  
 
     <div class="inputWrapper" style="margin-top: 45px;">
-        <input type="password" name="repass" id="repass_id" onkeypress="CorrectPass('repass_id')" onfocus="CorrectPass('repass_id')" onkeyup="CorrectPass('repass_id')" value="" placeholder="Повторите пароль" />
-        <div class="mini">введено: <span id="true_pass_view">0</span></div>
-        <div class="info" id="repass_correct"></div>
+        <input type="password" name="reg_repass" id="reg_repass_id" onkeyup="CorrectPass('reg_repass_id','reg_true_pass_view','reg_repass_correct','reg_pass_id')" value="" placeholder="Повторите пароль" />
+        <div class="mini">введено: <span id="reg_true_pass_view">0</span></div>
+        <div class="info" id="reg_repass_correct"></div>
       </div>
 
 
