@@ -91,7 +91,7 @@ function CorrectPass(repass_id, count_view, correct_view, pass_id) {
 	}
 
 	var correctView = document.getElementById(correct_view);
-	if (repass.length != pass.length && repass != pass) {
+	if (repass.length != pass.length || repass != pass) {
 		correctView.innerHTML = 'пароли не совпадают';
 		correctView.className = 'acorrect';
 	} else {
