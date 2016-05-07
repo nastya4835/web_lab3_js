@@ -19,19 +19,22 @@
 		<script type="text/javascript"> 
 		clock();
 		</script>
-	<div class="center_div" id="image123">
+	<input style="margin: 10px"  id="b1" value="Отличный сайт!" onclick="alert('Спасибо!');" type="button"/>
+	<div class="center_div">
 		<div>
 			<a href="index.html" title="Здоровый образ жизни и здоровое питание" align="right"><img src ="images/logo1.jpg" width="100%" /></a>
 		</div>
 
 		<div class="indicator loading"><img src="images/indicator.gif" alt=""></div>
 
+		<a href="form/registration.html"><button class="button_reg">Регистрация/Авторизация</button></a>
+
 		<form class="ui form" id='form' method='post'>
 			<div class="field">
 			<select>
 				<option value="">Регистрация</option>
 				<option value="1">Авторизация</option>
-				</select>
+			</select>
 		
 			<label>E-mail</label>
 			<div>
@@ -70,9 +73,7 @@
 					<input type="hidden" name="check_repass" id="check_repass" value="0" />
 					<input type="hidden" name="check_email" id="check_email" value="0" />
 					<input type="hidden" name="check_all" id="check_all" value="0" />
-			</div>
-
-			<input style="margin: 10px"  id="b1" value="ОК" onclick="alert('Спасибо!');" type="button"/>
+				</div>
 			</div>
 		</form>
 
