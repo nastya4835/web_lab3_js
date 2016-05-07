@@ -9,22 +9,26 @@ var $button;
 var $isBackgroundBlue = false;
 
 //При нажатии меняется ширина страницы
-$(function(){
-	$button = $("#image123");
-	$button.click(function() {  
-		if ($isBackgroundBlue) {
-			$button.css({
-				background: "#FFF",
-				width: "900px"
-			});
-		} else {
-			$button.css({
-				background: inputGoodColor,
-				width: "820px"
-			});
-		}
 
-		$isBackgroundBlue = !$isBackgroundBlue;
+/// Эта строка начинает все связанное с jQuery она может быть одна или несколько
+$(function() {
+	// id -- # ;  class -- . ;
+	var selector = $("#background_page");
+	$("#background_page").change(function() {
+		var backgroundPage = $("#image123");
+		switch ($("#background_page").val()) {
+			case "0": {
+				backgroundPage.css ({
+					background: "#000"
+				});
+			} break;
+			case "1": {
+				backgroundPage.css ({
+					background: "#FFF"
+				});
+			} break;
+			default: break;
+		}
 	});
 });
 
@@ -93,10 +97,10 @@ $(document).ready(function(){
 });
 
 //Поворот изображения
-$(document).ready(function(){
-	jQuery(".rotate1").rotate(45);
+$(document).ready(function() {
+	$(".rotate1").rotate(45);
 
-	jQuery("#rotate2").rotate({ bind:{
+	$("#rotate2").rotate({ bind:{
 		mouseover:function(){ $(this).rotate({animateTo:90}) },
 		mouseout:function(){ $(this).rotate({animateTo:0}) }
 	}});
@@ -106,6 +110,7 @@ $(document).ready(function(){
 		angle+=3;
 		jQuery("#rotate3").rotate(angle);
 	},90);
+	
 });
 
 //Меняющиеся картинки

@@ -23,7 +23,7 @@
 
     <!-- login container -->
     <div id="containerLogin" class="tabContainer active">
-      <form action="do some action here!">
+      <form id="auth_form" action="../index.html" method="POST">
       <h2 class="loginTitle">Авторизация</h2>
       <div class="loginContent">
         <div class="inputWrapper">
@@ -44,35 +44,32 @@
 
     <!-- register container -->
     <div id="containerRegister" class="tabContainer">
-      <form action="do some action here!">
+      <form id="reg_form" method="POST">
         <h2 class="loginTitle">Регистрация</h2>
         <div class="registerContent">
-          
+          <div class="inputWrapper">
+            <input type="text" id="email_id_reg" placeholder="Ваш email" />
+            <span id="valid_reg"></span>
+          </div>
+        </div>
 
-    <div class="inputWrapper">
-    <input type="text" id="email_id_reg" placeholder="Ваш email" />
-        <span id="valid_reg"></span>
-      </div>
-    </div>
+        <div class="inputWrapper">
+          <input type="text" name="reg_login" id="reg_login_id" onkeyup="CountLogin('reg_login_id','reg_login_view','reg_login_correct','reg_pass_id','reg_pass_correct')" value="" placeholder="Логин" />
+          <div class="mini">введено: <span id="reg_login_view">0</span></div>
+          <div class="info" id="reg_login_correct">не менее 5 символов</div>
+        </div>
 
-    <div class="inputWrapper">
-      <input type="text" name="reg_login" id="reg_login_id" onkeyup="CountLogin('reg_login_id','reg_login_view','reg_login_correct','reg_pass_id','reg_pass_correct')" value="" placeholder="Логин" />
-      <div class="mini">введено: <span id="reg_login_view">0</span></div>
-      <div class="info" id="reg_login_correct">не менее 5 символов</div>
-    </div>
+        <div class="inputWrapper">
+          <input  type="password" name="reg_pass" id="reg_pass_id" maxLength="20" onkeyup="CountPass('reg_pass_id','reg_pass_view','reg_pass_correct','reg_login_id','reg_login_correct','reg_repass_id','reg_repass_correct')" value="" placeholder="Пароль" />
+          <div class="mini">введено: <span id="reg_pass_view">0</span></div>
+          <div class="info" id="reg_pass_correct">пароль должен содержать от 4 до 20 символов</div>
+        </div>  
 
-    <div class="inputWrapper">
-        <input  type="password" name="reg_pass" id="reg_pass_id" maxLength="20" onkeyup="CountPass('reg_pass_id','reg_pass_view','reg_pass_correct','reg_login_id','reg_login_correct','reg_repass_id','reg_repass_correct')" value="" placeholder="Пароль" />
-        <div class="mini">введено: <span id="reg_pass_view">0</span></div>
-        <div class="info" id="reg_pass_correct">пароль должен содержать от 4 до 20 символов</div>
-    </div>  
-
-    <div class="inputWrapper" style="margin-top: 45px;">
-        <input type="password" name="reg_repass" id="reg_repass_id" onkeyup="CorrectPass('reg_repass_id','reg_true_pass_view','reg_repass_correct','reg_pass_id')" value="" placeholder="Повторите пароль" />
-        <div class="mini">введено: <span id="reg_true_pass_view">0</span></div>
-        <div class="info" id="reg_repass_correct"></div>
-      </div>
-
+        <div class="inputWrapper" style="margin-top: 45px;">
+          <input type="password" name="reg_repass" id="reg_repass_id" onkeyup="CorrectPass('reg_repass_id','reg_true_pass_view','reg_repass_correct','reg_pass_id')" value="" placeholder="Повторите пароль" />
+          <div class="mini">введено: <span id="reg_true_pass_view">0</span></div>
+          <div class="info" id="reg_repass_correct"></div>
+        </div>
 
         <button class="greenBox"><span class="iconRegister"></span> Зарегистрироваться</button>
         <div class="clear"></div>
@@ -82,7 +79,7 @@
 
     <!-- forgot container -->
     <div id="containerForgot" class="tabContainer">
-      <form action="do some action here!">
+      <form id="rec_form" method="POST">
         <h2 class="loginTitle">Восстановления пароля</h2>
         <div class="loginContent">
           <div class="inputWrapper">

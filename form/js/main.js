@@ -101,3 +101,61 @@ function CorrectPass(repass_id, count_view, correct_view, pass_id) {
 		correctView.className = 'correct';
 	}
 }
+
+// как проверять заполненность полей при отправке форм
+$(function() {
+	//jQuery
+	// (id формы).submit
+	$('#auth_form').submit(function(e) {
+		// Получаем логин и пароль
+		var login = $('#auth_login_id').val();
+		var pass = $('#auth_pass_id').val();
+
+		// Проверяем
+		if ((login.length < 5 && pass < 4) || login == pass) {
+			// Отменяем отправку формы
+			// preventDefault отменяет у обработчика действие по умолчанию
+			// У формы действие по умолчанию -- отправиться
+			e.preventDefault();
+			// Выводим сообщение пользователю
+			alert('Пара логин/пароль неверна');
+			return;
+		}
+	});
+
+	// говорил, что тут может быть несколько функций связанных с jQuery
+	// Обработка формы регистрации
+	$('#reg_form').submit(function(e) {
+		var login = $('#reg_login_id').val();
+		var pass = $('#reg_pass_id').val();
+		var repass = $('#reg_repass_id').val();
+
+		if (login == pass) {
+			e.preventDefault();
+			alert('Логин и пароль не должны совпадать');
+			return;
+		}
+
+		if (login.length < 5 && pass < 4) {
+			e.preventDefault();
+			alert('Логин должен быть длиннее 4 символов. Пароль длиннее 3 символов');
+			return;	
+		}
+
+		if (pass != repass) {
+			// Отменяем отправку формы
+			// preventDefault отменяет у обработчика действие по умолчанию
+			// У формы действие по умолчанию -- отправиться
+			e.preventDefault();
+			// Выводим сообщение пользователю
+			// КОШАра потому что не понятно ничего по такому сообщению
+			alert('Пароли не совпадают');
+			return;
+		}
+	}); 
+
+	// Обработка формы восстановления
+	$('#rec_form').submit(function(e) {
+
+	});
+});
