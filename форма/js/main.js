@@ -1,21 +1,23 @@
 $(document).ready(function() {
-	$('#email_id').blur(function() {
-		if($(this).val() != '') {
-			var pattern = /^([a-z0-9_\.-])+@[a-z0-9-]+\.([a-z]{2,4}\.)?[a-z]{2,4}$/i;
-			if(pattern.test($(this).val())){
-				$(this).css({'border' : '1px solid #569b44'});
-				$('#valid').text('Верно');
-			} else {
-				$(this).css({'border' : '1px solid #ff0000'});
-				$('#valid').text('Не верно');
-			}
-		} else {
-			$(this).css({'border' : '1px solid #ff0000'});
-			$('#valid').text('Поле email не должно быть пустым');
-		}
-	});
+	$('#email_id_reg').blur(function() { checkEmail(this, '#valid_reg'); });
+	$('#email_id_rec').blur(function() { checkEmail(this, '#valid_rec'); });
 });
 
+function checkEmail(input, valid_view) {
+	if($(input).val() != '') {
+		var pattern = /^([a-z0-9_\.-])+@[a-z0-9-]+\.([a-z]{2,4}\.)?[a-z]{2,4}$/i;
+		if(pattern.test($(input).val())){
+			$(input).css({'border' : '1px solid #569b44'});
+			$(valid_view).text('Верно');
+		} else {
+			$(input).css({'border' : '1px solid #ff0000'});
+			$(valid_view).text('Не верно');
+		}
+	} else {
+		$(input).css({'border' : '1px solid #ff0000'});
+		$(valid_view).text('Поле email не должно быть пустым');
+	}
+};
 
 function CountLogin(login_id, count_view, correct_view_login, pass_id, correct_view_pass) {
 	// pass_id Поле ввода пароля
