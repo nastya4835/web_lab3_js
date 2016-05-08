@@ -10,7 +10,7 @@ var $isBackgroundBlue = false;
 
 //При нажатии меняется ширина страницы
 
-/// Эта строка начинает все связанное с jQuery она может быть одна или несколько
+//Выпадающий список и фон
 $(function() {
 	// id -- # ;  class -- . ;
 	var selector = $("#background_page");
@@ -25,6 +25,26 @@ $(function() {
 			case "1": {
 				backgroundPage.css ({
 					background: "#FFF"
+				});
+			} break;
+			case "2": {
+				backgroundPage.css ({
+					background: "#FFE4E1"
+				});
+			} break; 
+			case "3": {
+				backgroundPage.css ({
+					background: "#808000"
+				});
+			} break;
+			case "4": {
+				backgroundPage.css ({
+					background: "#9ACD32"
+				});
+			} break;
+			case "5": {
+				backgroundPage.css ({
+					background: "#40E0D0"
 				});
 			} break;
 			default: break;
