@@ -1,6 +1,6 @@
 $(document).ready(function() {
-	$('#email_id_reg').blur(function() { checkEmail(this, '#valid_reg'); });
-	$('#email_id_rec').blur(function() { checkEmail(this, '#valid_rec'); });
+	$('#email_id_reg').blur(function() { checkEmail('#email_id_reg', '#valid_reg'); });
+	$('#email_id_rec').blur(function() { checkEmail('#email_id_rec', '#valid_rec'); });
 });
 
 function checkEmail(input, valid_view) {
@@ -9,6 +9,7 @@ function checkEmail(input, valid_view) {
 		if(pattern.test($(input).val())){
 			$(input).css({'border' : '1px solid #569b44'});
 			$(valid_view).text('Верно');
+			return true;
 		} else {
 			$(input).css({'border' : '1px solid #ff0000'});
 			$(valid_view).text('Не верно');
@@ -17,6 +18,8 @@ function checkEmail(input, valid_view) {
 		$(input).css({'border' : '1px solid #ff0000'});
 		$(valid_view).text('Поле email не должно быть пустым');
 	}
+
+	return false;
 };
 
 function CountLogin(login_id, count_view, correct_view_login, pass_id, correct_view_pass) {
@@ -103,6 +106,27 @@ function CorrectPass(repass_id, count_view, correct_view, pass_id) {
 }
 
 // как проверять заполненность полей при отправке форм
+
+function checkLengthAllFields(login, pass, repass, email) {
+	if (login != undefined && !login.length) {
+		return false;
+	}
+
+	if (pass != undefined && !pass.length) {
+		return false;
+	}
+
+	if (repass != undefined && !repass.length) {
+		return false;
+	}
+
+	if (email != undefined && !email.length) {
+		return false;
+	}
+
+	return true;
+}
+
 $(function() {
 	//jQuery
 	// (id формы).submit
@@ -110,6 +134,12 @@ $(function() {
 		// Получаем логин и пароль
 		var login = $('#auth_login_id').val();
 		var pass = $('#auth_pass_id').val();
+
+		if (!checkLengthAllFields(login, pass)) {
+			e.preventDefault()
+			alert('Вы должны заполнить все поля');
+			return;
+		}
 
 		// Проверяем
 		if ((login.length < 5 && pass < 4) || login == pass) {
@@ -126,9 +156,28 @@ $(function() {
 	// говорил, что тут может быть несколько функций связанных с jQuery
 	// Обработка формы регистрации
 	$('#reg_form').submit(function(e) {
+		var email = $('#email_id_reg').val();
 		var login = $('#reg_login_id').val();
 		var pass = $('#reg_pass_id').val();
 		var repass = $('#reg_repass_id').val();
+
+		if (!checkLengthAllFields(login, pass, repass, email)) {
+			e.preventDefault()
+			alert('Вы должны заполнить все поля');
+			return;
+		}
+
+		if (!email.length) {
+			e.preventDefault();
+			alert('Поле E-mail не должно быть пустым');
+			return;
+		}
+
+		if (!checkEmail('#email_id_reg', '#valid_reg')) {
+			e.preventDefault();
+			alert('Ошибка в введенном E-mail');
+			return;
+		}
 
 		if (login == pass) {
 			e.preventDefault();
@@ -136,7 +185,7 @@ $(function() {
 			return;
 		}
 
-		if (login.length < 5 && pass < 4) {
+		if (login.length < 5 || pass < 4) {
 			e.preventDefault();
 			alert('Логин должен быть длиннее 4 символов. Пароль длиннее 3 символов');
 			return;	
@@ -155,6 +204,24 @@ $(function() {
 
 	// Обработка формы восстановления
 	$('#rec_form').submit(function(e) {
+		var email = $('#email_id_rec').val();
 
+		if (!checkLengthAllFields(undefined, undefined, undefined, email)) {
+			e.preventDefault()
+			alert('Вы должны заполнить все поля');
+			return;
+		}
+
+		if (!email.length) {
+			e.preventDefault();
+			alert('Поле E-mail не должно быть пустым');
+			return;
+		}
+
+		if (!checkEmail('#email_id_rec', '#valid_rec')) {
+			e.preventDefault();
+			alert('Ошибка в введенном E-mail');
+			return;
+		}
 	});
 });
