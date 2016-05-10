@@ -36,12 +36,6 @@ function CountLogin(login_id, count_view, correct_view_login, pass_id, correct_v
 }
 
 function CountPass(pass_id, count_view, correct_view_pass, login_id, correct_view_login, repass_id, correct_view_repass) {
-	// pass_id Поле ввода пароля
-	// count_view Поле вывода количества символов в пароле
-	// correct_view_pass Сообщение для пароля
-	// login_id Поле ввода логина
-	// correct_view_login Сообщение для логина
-
 	// Обновляем количество введенных символов
 	document.getElementById(count_view).innerHTML = document.getElementById(pass_id).value.length; 
 	// Проверяем данные
@@ -128,8 +122,6 @@ function checkLengthAllFields(login, pass, repass, email) {
 }
 
 $(function() {
-	//jQuery
-	// (id формы).submit
 	$('#auth_form').submit(function(e) {
 		// Получаем логин и пароль
 		var login = $('#auth_login_id').val();
@@ -144,8 +136,6 @@ $(function() {
 		// Проверяем
 		if ((login.length < 5 && pass < 4) || login == pass) {
 			// Отменяем отправку формы
-			// preventDefault отменяет у обработчика действие по умолчанию
-			// У формы действие по умолчанию -- отправиться
 			e.preventDefault();
 			// Выводим сообщение пользователю
 			alert('Пара логин/пароль неверна');
@@ -153,7 +143,6 @@ $(function() {
 		}
 	});
 
-	// говорил, что тут может быть несколько функций связанных с jQuery
 	// Обработка формы регистрации
 	$('#reg_form').submit(function(e) {
 		var email = $('#email_id_reg').val();

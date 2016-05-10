@@ -8,8 +8,6 @@ var $userName;
 var $button;
 var $isBackgroundBlue = false;
 
-//При нажатии меняется ширина страницы
-
 //Выпадающий список и фон
 $(function() {
 	// id -- # ;  class -- . ;
@@ -306,7 +304,7 @@ document.getElementById(item_view).innerHTML = document.getElementById(item).val
 	checkAll();
 }
 
-//Проверка на заполненность всех полей и Зарегистриваться
+//Проверка на заполненность всех полей и Зарегистрироваться
 function checkAll() {
 var x;
 var check_login = document.getElementById('check_login').value;
